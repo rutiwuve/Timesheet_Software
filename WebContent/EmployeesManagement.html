@@ -1,0 +1,153 @@
+<form  class="container"> 
+      <label for="first">Employee managment</label>
+      <input id="first" type="radio" name="content" ng-model="content" value="employee managment">
+      
+       <label for="customers">Combine employee and project</label>
+      <input id="customers" type="radio" name="content" ng-model="content" value="employee and project">
+ </form>
+ <div data-ng-show =" content=='employee managment'">
+  <div class="container">
+ 
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: left;">ADD EMPLOYEE</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">add/edit a employee</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+First name: <br><input type="text" name="date" data-ng-model="firstname"><br>
+Last name: <br><input type="text" name="lastname" data-ng-model="lastname"><br>
+Email: <br><input type="text" name="email" data-ng-model="email"><br>
+Phone: <br><input type="text" name="phone" data-ng-model="phone"><br>
+User name: <br><input type="text" name="username" data-ng-model="username"><br>
+Password: <br><input type="text" name="password" data-ng-model="password"><br>
+<input type="button" value="add employee" data-ng-click ="addRow()" >
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<br>
+
+ <div class="container">
+ 
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add/Edit a employee</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+First name: <br><input type="text" name="date" data-ng-model="firstname"><br>
+Last name: <br><input type="text" name="lastname" data-ng-model="lastname"><br>
+Email: <br><input type="text" name="email" data-ng-model="email"><br>
+Phone: <br><input type="text" name="phone" data-ng-model="phone"><br>
+<input type="button" value="save update" data-ng-click ="saveEmployee()" >
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<div>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+       <th>Edit</th>
+      <th>Delete</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="tr-{{x.id}}" data-ng-repeat="x in getAllEmployee | filter:search">
+      <td>{{x.firstname}}</td>
+      <td>{{x.lastname}}</td>
+      <td>{{x.email}}</td>
+      <td>{{x.phone}}</td>
+      <td><button class="glyphicon glyphicon-pencil" data-ng-click ="editEmployee(x.id)" data-toggle="modal" data-target="#myModal1"></button></td>
+      <td><button class="glyphicon glyphicon-trash" data-ng-click="RemoveRow(x.user)"></button></td>
+    </tr>
+    </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <br>
+   <div data-ng-show =" content=='employee and project'">
+ <div>
+<h4>Combine employee and project</h4>
+SELECT EMPLOYEE:
+<select data-ng-model="employee">
+  <option data-ng-repeat="x in getAllEmployee" value="{{x.id}}" >{{x.firstname}}</option>
+ 
+</select>
+<br>
+SELECT PROJECT:
+<select data-ng-model="project">
+<option data-ng-repeat="x in getAllProject" value="{{x.id}}">{{x.projectname}}</option>
+ 
+</select><br>
+
+<button data-ng-click = "createEp()">submit</button>
+
+</div>
+    <br>
+ 
+<div>
+<table border="1" align="center">
+<thead>
+<tr>
+<th>id</th>
+<th>Project</th>
+<th>Employee</th>
+<th>Delete row</th>
+</tr>
+</thead>
+
+<tbody>
+<tr id="tr-{{x.id}}" data-ng-repeat = "x in EmployeeProject">
+<td>{{$index + 1}}</td>
+<td>{{x.project.projectname}}</td>
+<td>{{x.employee.firstname}}&nbsp;{{x.employee.lastname}}</td>
+<td><input value="delete" type="submit" data-ng-click="RemovecreateEp(x.id)"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+    
+  
+    

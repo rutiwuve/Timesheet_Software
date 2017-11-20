@@ -1,0 +1,38 @@
+<div>
+	<form>
+		Select month and year:<input type="month" data-ng-model="yearAndMonth"/>
+		Search by project: <select data-ng-model="selectProject">
+		<option data-ng-repeat="x in getCustomerProject" value="{{x.id}}">{{x.projectname}}</option>
+		</select>
+		<br>
+		<button data-ng-click="showSelectedMonthAndYear()">show search</button>
+	</form>
+</div>
+<div>
+<h2>Customers projects hour report</h2>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Project</th>
+      <th>Date</th>
+      <th>Start hour</th>
+      <th>End hour</th>
+      <th>Description</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="x in houeReportByCustomer | filter:search">
+      <td>{{x.employee.firstname}}</td>
+      <td>{{x.project.projectname}}</td>
+      <td>{{x.date}}</td>
+      <td>{{x.startdate}}</td>
+      <td>{{x.enddate}}</td>
+      <td>{{x.description}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

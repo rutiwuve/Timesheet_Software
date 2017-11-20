@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title"> WELCOME please sing in... </h1>
+            <div class="account-wall">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="user name" required autofocus data-ng-model="username">
+                <input type="password" class="form-control" placeholder="Password" required data-ng-model="password"> 
+                <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="submit()">
+                    Sign in</button>
+                    <br>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Forgot Password?</button> 
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+   <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>        
+        </div>
+        <div class="modal-body">
+<div class="form-group" class="div">
+	Insert Email:
+    <input type="email" ng-model="forgotEmail" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    Select a type:
+    <select class="form-control" id="exampleFormControlSelect1" data-ng-model="forgotType">
+      <option value="employee">employee</option>
+      <option value="customer">customer</option>
+    </select>
+    <button data-ng-click="forgotPassword()" class="btn btn-primary" >Send mail to get password</button>
+  </div>
+  <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+  </div>

@@ -1,0 +1,34 @@
+
+
+<div>
+<h2> Customers active projects</h2>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Customer</th>
+      <th>Customer project manager</th>
+      <th>Project manager email</th>
+      <th>Project manager phone</th>
+      <th>Start date</th>
+      <th>End date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="x in GetCustomerActiveProject | filter:search">
+      <td>{{x.projectname}}</td>
+      <td>{{x.customer.companyname}}</td>
+      <td>{{x.customerprojectmanager}}</td>
+      <td>{{x.projectmanageremail}}</td>
+      <td>{{x.projectmanagerephone}}</td>
+      <td>{{x.startdate}}</td>
+      <td>{{x.enddate}}</td>
+
+
+    </tr>
+      
+  </tbody>
+</table>
+</div>

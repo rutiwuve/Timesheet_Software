@@ -1,0 +1,97 @@
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: left;">ADD CUSTOMER</button>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add/Edit a customer</h4>
+        </div>
+        <div class="modal-body">
+<form>
+Company name:<br> <input type="text" name="companyname" data-ng-model = "companyname"><br>
+Company number:<br> <input type="text" name="companynumber" data-ng-model = "companynumber"><br>
+Contact name:<br> <input type="text" name="contactname" data-ng-model = "contactname"><br>
+Email: <br><input type="text" name="email" data-ng-model = "email"><br>
+Phone: <br><input type="text" name="phone" data-ng-model = "phone"><br>
+User name:<br> <input type="text" name="username" data-ng-model = "username"><br>
+Password: <br><input type="text" name="password" data-ng-model = "password"><br>
+<input type="button" value="add customer" data-ng-click ="addRow()" >
+
+</form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">add/edit a customer</h4>
+        </div>
+        <div class="modal-body">
+<form>
+Company name:<br> <input type="text" name="companyname" data-ng-model = "companyname"><br>
+Company number:<br> <input type="text" name="companynumber" data-ng-model = "companynumber"><br>
+Contact name:<br> <input type="text" name="contactname" data-ng-model = "contactname"><br>
+Email: <br><input type="text" name="email" data-ng-model = "email"><br>
+Phone: <br><input type="text" name="phone" data-ng-model = "phone"><br>
+<input type="button" value="save update" data-ng-click ="saveCustomer()" >
+
+</form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>
+<br>
+<div>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Company number</th>
+      <th>Contact name</th>
+      <th>Email</th>
+      <th>Phone</th>
+       <th>Edit</th>
+      <th>Delete</th>
+           
+    </tr>
+  </thead>
+  <tbody>
+      <tr id="tr-{{x.id}}" data-ng-repeat="x in getAllCustomer | filter:search">
+      <td>{{x.companyname}}</td>
+      <td>{{x.companynumber}}</td>
+      <td>{{x.contactname}}</td>
+      <td>{{x.email}}</td>
+      <td>{{x.phone}}</td>    
+      <td><button class="glyphicon glyphicon-pencil" data-ng-click ="editCustomer(x.id)"  data-toggle="modal" data-target="#myModal1"></button></td>
+      <td><button class="glyphicon glyphicon-trash" data-ng-click="RemoveRow(x.user)"></button></td>
+    </tr>
+  </tbody>
+</table>
+</div>

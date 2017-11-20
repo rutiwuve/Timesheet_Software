@@ -1,0 +1,39 @@
+<div align="center">
+<form>
+<h1>Hours</h1>
+<p> Current start time: {{starttime}} Current end time: {{endtime}}</p>
+Start time:<input type="time" id="starttime"><br>
+End time:<input type="time" id="endtime"><br>
+<br> 
+<button data-ng-click ="sethours()" class="btn btn-default">send</button>
+<h1>days</h1>
+
+<p> Current days of work:{{getdays}} </p>
+<br>
+Sunday<label>
+<input type="checkbox" data-ng-model="week.Sunday" data-ng-true-value="'0'" data-ng-false-value="'freeday'">
+</label>
+Monday<label>
+<input type="checkbox" data-ng-model="week.Monday" data-ng-true-value="'1'" data-ng-false-value="'freeday'">
+</label>
+Tuesday<label>
+<input type="checkbox" data-ng-model="week.Tuesday" data-ng-true-value="'2'" data-ng-false-value="'freeday'">
+</label>
+Wednesday<label>
+<input type="checkbox" data-ng-model="week.Wednesday" data-ng-true-value="'3'" data-ng-false-value="'freeday'">
+</label>
+Thursday<label>
+<input type="checkbox" data-ng-model="week.Thursday" data-ng-true-value="'4'" data-ng-false-value="'freeday'">
+</label>
+Friday<label>
+<input type="checkbox" data-ng-model="week.Friday" data-ng-true-value="'5'" data-ng-false-value="'freeday'">
+</label>
+Saturday<label>
+<input type="checkbox" data-ng-model="week.Saturday" data-ng-true-value="'6'" data-ng-false-value="'freeday'">
+</label>
+<br>
+<br>
+<button data-ng-click ="setdays()" class="btn btn-default">send</button>
+</form>
+</div>
+

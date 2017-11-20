@@ -1,0 +1,10 @@
+[
+{"id":1,"employee":1,"project":1,"startdate":"2001-01-20 17:00:00.0","enddate":"2005-01-20 17:00:00.0","description":"OnTime"},
+{"id":2,"employee":2,"project":2,"startdate":"2002-02-20 17:00:00.0","enddate":"2006-02-20 17:00:00.0","description":"OnTime"},
+{"id":3,"employee":3,"project":3,"startdate":"2003-03-20 17:00:00.0","enddate":"2007-03-20 17:00:00.0","description":"NotOnTime"},
+{"id":4,"employee":4,"project":4,"startdate":"2004-04-20 17:00:00.0","enddate":"2008-04-20 17:00:00.0","description":"OnTime"},
+{"id":5,"employee":1,"project":1,"startdate":"2017-05-12 12:05:00.0","enddate":"2017-05-12 20:05:00.0","description":"on time"},
+{"id":6,"employee":1,"project":1,"startdate":"2017-05-12 12:05:00.0","enddate":"2017-05-12 20:05:00.0","description":"on time"},
+{"id":7,"employee":1,"project":1,"startdate":"2017-05-12 12:05:00.0","enddate":"2017-05-12 20:05:00.0","description":"on time"},
+{"id":8,"employee":1,"project":1,"startdate":"2017-02-05 00:00:00.0","enddate":"2017-05-06 00:00:00.0","description":"NotOnTime"}
+]

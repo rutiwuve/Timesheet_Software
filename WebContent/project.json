@@ -1,0 +1,7 @@
+[
+{"id":2,"projectname":"barbie","customer":2,"customerprojectmanager":"yosef","projectmanageremail":"yosef@gmail.com","projectmanagerephone":"0546219142","startdate":"2001-01-20 17:00:00.0","enddate":"2005-01-20 17:00:00.0"},
+{"id":1,"projectname":"disny","customer":1,"customerprojectmanager":"avi","projectmanageremail":"avi@gmail.com","projectmanagerephone":"0546219141","startdate":"2001-01-20 17:00:00.0","enddate":"2005-01-20 17:00:00.0"},
+{"id":3,"projectname":"dora","customer":3,"customerprojectmanager":"yossi","projectmanageremail":"yossi@gmail.com","projectmanagerephone":"0546219143","startdate":"2001-01-20 17:00:00.0","enddate":"2005-01-20 17:00:00.0"},
+{"id":4,"projectname":"mumenim","customer":4,"customerprojectmanager":"hen","projectmanageremail":"hen@gmail.com","projectmanagerephone":"0546219144","startdate":"2001-01-20 17:00:00.0","enddate":"2005-01-20 17:00:00.0"}
+]
+

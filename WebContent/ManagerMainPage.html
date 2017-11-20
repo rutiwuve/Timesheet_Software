@@ -1,0 +1,133 @@
+   <form  class="container"> 
+      <label for="first">Big customers</label>
+      <input id="first" type="radio" name="content" ng-model="content" value="first">
+     
+      <label for="customers">Active customers</label>
+      <input id="customers" type="radio" name="content" ng-model="content" value="customers">
+    
+      <label for="projects">Active projects</label>
+      <input id="projects" type="radio" name="content" ng-model="content" value="projects">
+     
+      <label for="completion">Projects near completion</label>
+      <input id="completion" type="radio" name="content" ng-model="content" value="completion">
+    </form>
+
+<div ng-show="content == 'first'">  
+	<input type= "text" data-ng-model="search" placeholder="search">
+	<table border="1" class="table table-inverse" >
+	<h2>Big customers</h2>
+	  <thead>
+	    <tr>
+	      <th>Company name</th>
+	      <th>Company number</th>
+	      <th>Contact name</th>
+	      <th>Email</th>
+	      <th>Phone</th>
+	      <th>Number of projects</th>
+	   
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr data-ng-repeat="x in getBigCustomer | filter:search">
+	      <td>{{x.companyname}}</td>
+	      <td>{{x.companynumber}}</td>
+	      <td>{{x.contactname}}</td>
+	      <td>{{x.email}}</td>
+	      <td>{{x.phone}}</td>
+	      <td>{{x.projectnum}}</td>
+
+	
+	    </tr>
+	      
+	  </tbody>
+	</table >
+	</div>
+	
+	<div ng-show="content == 'customers'">
+	<input type= "text" data-ng-model="search" placeholder="search">  	 
+	<table border="1" class="table table-inverse">
+		<h2>Active customers</h2>	
+	  <thead>
+	    <tr>
+	      <th>Company name</th>
+	      <th>Company number</th>
+	      <th>Contact name</th>
+	      <th>Email</th>
+	      <th>Phone</th>
+	      
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr data-ng-repeat="x in getcustomerbystatus | filter:search">
+	      <td>{{x.companyname}}</td>
+	      <td>{{x.companynumber}}</td>
+	      <td>{{x.contactname}}</td>
+	      <td>{{x.email}}</td>
+	      <td>{{x.phone}}</td>
+	
+	    </tr>
+	      
+	  </tbody>
+	</table>
+	</div>
+	
+	<div ng-show="content == 'projects'">
+	<input type= "text" data-ng-model="search" placeholder="search" >	
+	<table border="1" class="table table-inverse">
+	<h2>Active 	projects</h2>	
+	  <thead>
+	    <tr>
+	      <th>Project name</th>
+	      <th>Customer</th>
+	      <th>Customer project manager</th>
+	      <th>Project manager email</th>
+	      <th>Project manager phone</th>
+	      <th>Start date</th>
+	      <th>End date</th>
+	     
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr data-ng-repeat="x in GetActiveProject | filter:search">
+	      <td>{{x.projectname}}</td>
+	      <td>{{x.customer.companyname}}</td>
+	      <td>{{x.customerprojectmanager}}</td>
+	      <td>{{x.projectmanageremail}}</td>
+	      <td>{{x.projectmanagerephone}}</td>
+	      <td>{{x.startdate}}</td>
+	      <td>{{x.enddate}}</td>
+	    
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+
+<div ng-show="content == 'completion'">
+	<input type= "text" data-ng-model="search" placeholder="search" >     <table border="1" class="table table-inverse">
+	<h2>Projects near completion</h2>	
+		<thead>
+	    <tr>
+	      <th>Project name</th>
+	      <th>Customer</th>
+	      <th>Customer project manager</th>
+	      <th>Project manager email</th>
+	      <th>Project manager phone</th>
+	      <th>Start date</th>
+	      <th>End date</th>
+	      
+	     
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr data-ng-repeat="x in GetProjectBeforEnd | filter:search">
+	      <td>{{x.projectname}}</td>
+	      <td>{{x.customer.companyname}}</td>
+	      <td>{{x.customerprojectmanager}}</td>
+	      <td>{{x.projectmanageremail}}</td>
+	      <td>{{x.projectmanagerephone}}</td>
+	      <td>{{x.startdate}}</td>
+	      <td>{{x.enddate}}</td>	  
+	    </tr>
+	  </tbody>
+	</table>
+</div>

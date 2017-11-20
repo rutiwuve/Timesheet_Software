@@ -1,0 +1,65 @@
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float: left;">report here</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+   <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Report your hours</h4>
+        </div>
+        <div class="modal-body">
+<form>
+
+Project:<select data-ng-model="project">
+<option data-ng-repeat="x in getAllProject" value="{{x.id}}">{{x.projectname}}</option>
+</select><br>
+Date: <br><input type="text" name="Date" id ="datepicker" data-ng-model="date"><br>
+Start time: <br><input type="time" name="startdate" id="startdate" min="{{starttime}}" max="{{endtime}}" id="startdate"><br>
+End time: <br><input type="time" name="enddate" id="enddate" min="{{starttime}}" max="{{endtime}}" id="enddate"><br>
+Description: <br><input type="text" name="Description" data-ng-model="description"><br>
+<button data-ng-click="NewHourReport()">save</button>
+
+</form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+  </div>
+<br>
+<div>
+<h2>Weekly report</h2>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+      <tr>
+      <th>Project</th>
+      <th>date</th>
+      <th>Start hour</th>
+      <th>End hour</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="x in GetWeeklyReport | filter:search">
+      <td>{{x.project.projectname}}</td>
+      <td>{{x.date}}</td>
+      <td>{{x.startdate}}</td>
+      <td>{{x.enddate}}</td>
+      <td>{{x.description}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

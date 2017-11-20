@@ -1,0 +1,47 @@
+<div>
+	<form>
+		Search by year and month:<input type="month" data-ng-model="yearAndMonth"/>
+		Search by employee:<select data-ng-model="selectEmployee">
+		<option data-ng-repeat=" x in getAllEmployee" value="{{x.id}}">{{x.firstname}}</option>
+		</select>
+		Search by project:<select data-ng-model="selectProject">
+		<option data-ng-repeat="x in getAllProject" value="{{x.id}}">{{x.projectname}}</option>
+		</select>
+		Search by customer:<select data-ng-model="selectCustomer">
+		<option data-ng-repeat="x in getAllCustomer" value="{{x.id}}">{{x.companyname}}</option>
+		</select> 
+		<br>
+		<button data-ng-click="showSelectedMonthAndYear()">show search</button>
+	</form>
+</div>
+
+<h3>EMPLOYEES HOUR REPORTS</h3>
+
+<div>
+<input type= "text" data-ng-model="search" placeholder="search">
+<br><br>
+<table border="1" class="table table-inverse">
+  <thead>
+    <tr> 
+      <th>Employee</th>
+      <th>Project</th>
+      <th>date</th>
+      <th>Start hour</th>
+      <th>End hour</th>
+      <th>Description</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="x in getAllHourReports | filter:search">    
+      <td>{{x.employee.firstname}}</td>
+      <td>{{x.project.projectname}}</td>
+      <td>{{x.date}}</td>
+      <td>{{x.startdate}}</td>
+      <td>{{x.enddate}}</td>
+      <td>{{x.description}}</td>
+ 
+    </tr>
+  </tbody>
+</table>
+</div>
